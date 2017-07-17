@@ -1,0 +1,59 @@
+CREATE TABLE users (
+  user_id INT(11) unsigned NOT NULL AUTO_INCREMENT,
+  user_key VARCHAR(35) NOT NULL,
+  bot_type VARCHAR(10) NOT NULL,
+  weight_type VARCHAR(5) NOT NULL DEFAULT 'kg',
+  age YEAR,
+  sex CHAR(1),
+  height DECIMAL(4,1),
+  alarm_time TIME NOT NULL DEFAULT '12:00',
+  alarm_onoff BOOL NOT NULL DEFAULT '1',
+  goal DECIMAL(6,2) NOT NULL DEFAULT '0',
+  state DECIMAL(4,1) NOT NULL DEFAULT '1',
+  state_time TIMESTAMP NOT NULL,
+  activation BOOL NOT NULL DEFAULT '1',
+  language CHAR(2) NOT NULL DEFAULT 'KR',
+  PRIMARY KEY (user_id),
+  UNIQUE INDEX (user_key)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE weights (
+  weight_id BIGINT(20) unsigned NOT NULL AUTO_INCREMENT,
+  user_id INT(11) unsigned NOT NULL,
+  weight DECIMAL(6,2) NOT NULL,
+  date DATE NOT NULL,
+  type VARCHAR(5) NOT NULL,
+  PRIMARY KEY (weight_id),
+  FOREIGN KEY (user_id) REFERENCES `users` (`user_id`),
+  UNIQUE (date, user_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE tokens (
+  user_id INT(11) unsigned NOT NULL,
+  token_uuid VARCHAR(255) NOT NULL,
+  token_createdtime TIMESTAMP NOT NULL,
+  PRIMARY KEY(user_id),
+  FOREIGN KEY (user_id) REFERENCES `users` (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+-----------------------------------------------------
+CREATE TABLE tokens (
+  token_id BIGINT(20) unsigned NOT NULL AUTO_INCREMENT,
+  user_id INT(11) unsigned NOT NULL,
+  user_key VARCHAR(35) NOT NULL,
+  token_uuid VARCHAR(255) NOT NULL,
+  token_createdtime TIMESTAMP NOT NULL,
+  PRIMARY KEY(token_id),
+  FOREIGN KEY (user_id) REFERENCES `users` (`user_id`),
+  UNIQUE (user_key)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+/* 컬럼명 변경 및 타입 변경 */
+alter table [테이블명] change [컬럼명] [변경할컬럼명] varchar(12);
+
+
+ALTER TABLE tablename AUTO_INCREMENT = 1
