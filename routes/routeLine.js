@@ -17,7 +17,7 @@ module.exports = function(lineBot, urls){
     
     //FOLLOW event
     lineBot.on(LINEBot.Events.FOLLOW, function(replyToken, message) {
-        if(message.isUserEvent() === true){
+        if(message.isUserEvent() === true){ //그룹이나, 룸에선 이용불가
             return insertUserLine(message, replyToken, lineBot);
         }
         console.log("FOLLOW ERROR");

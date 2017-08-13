@@ -1,0 +1,58 @@
+get started 버튼사용
+curl -X POST -H "Content-Type: application/json" -d '{
+  "greeting":[
+    {
+      "locale":"default",
+      "text":"Hello {{user_full_name}}!"
+    }
+  ] 
+}'  "https://graph.facebook.com/v2.6/me/messenger_profile?access_token=/*access_token*/"
+
+인사말 설정
+curl -X POST -H "Content-Type: application/json" -d '{
+  "greeting":[
+    {
+      "locale":"default",
+      "text":"Hello {{user_full_name}}! this is "W8" to help you manage your health.\nThis bot will take care of your weight information with chart graphs."
+    }
+  ] 
+}' "https://graph.facebook.com/v2.6/me/messenger_profile?access_token=/*access_token*/”
+
+고정버튼 사용
+curl -X POST -H "Content-Type: application/json" -d '{
+  "persistent_menu":[
+    {
+      "locale":"default",
+      "composer_input_disabled":false,
+      "call_to_actions":[
+        {
+          "type":"postback",
+          "title":"Main menu",
+          "payload":'6'
+        },
+        {
+          "title":"Setting",
+          "type":"nested",
+          "call_to_actions":[
+            {
+              "title":"Alarm",
+              "type":"postback",
+              "payload":"11"
+            },
+            {
+              "title":"Weight unit",
+              "type":"postback",
+              "payload":"20"
+            },
+            {
+              "title":"Height",
+              "type":"postback",
+              "payload":"13"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}' "https://graph.facebook.com/v2.6/me/messenger_profile?access_token=/*access_token*/“
+    

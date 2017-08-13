@@ -99,7 +99,7 @@ exports.postback = function(replyToken, postback, urls, lineBot){
             });   
         }else if(postdata === '11.c'){
             setState(11, user.user_key, function() {
-                getUserState(user.user_key, function(user) {
+                getUserState(user.user_key, postdata,function(user) {
                     //console.log("11.c", user.alarm_onoff);
                     lineBot.replyMessage(replyToken, setting.setAlarmButton(user));  
                 });

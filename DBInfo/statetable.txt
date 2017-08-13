@@ -67,29 +67,3 @@ INSERT INTO states (state_now, state_choice, state_next, state_name) VALUES ('19
 INSERT INTO states (state_now, state_choice, state_next, state_name) VALUES ('19','b','6','setWeightTypeButton_b');
 INSERT INTO states (state_now, state_choice, state_next, state_name) VALUES ('20','a','6','setWeightType_a');
 INSERT INTO states (state_now, state_choice, state_next, state_name) VALUES ('20','b','6','setWeightType_b');
-
-
-
-
-INSERT INTO users (user_key, bot_type, alarm_time) VALUES ('121aw345','LINE','06:13');
-INSERT INTO users (user_key, bot_type, alarm_time) VALUES ('1a23da67','LINE','06:13');
-INSERT INTO users (user_key, bot_type, alarm_time) VALUES ('1223dcb11','LINE','06:13');
-INSERT INTO users (user_key, bot_type, alarm_time) VALUES ('1124db2a3','LINE','06:13');
-INSERT INTO users (user_key, bot_type, alarm_time) VALUES ('154s6s2s3','LINE','06:13');
-INSERT INTO users (user_key, bot_type, alarm_time) VALUES ('127d687e93','LINE','06:13');
-INSERT INTO users (user_key, bot_type, alarm_time) VALUES ('1278a978a3','LINE','06:13');
-
-
-INSERT INTO weights (user_id, weight, date, locale) VALUES ('1','71','2017-05-11','kg');
-INSERT INTO weights (user_id, weight, date, locale) VALUES ('1','72','2017-05-12','kg');
-INSERT INTO weights (user_id, weight, date, locale) VALUES ('1','73','2017-05-13','kg');
-INSERT INTO weights (user_id, weight, date, locale) VALUES ('1','74','2017-05-14','kg');
-INSERT INTO weights (user_id, weight, date, locale) VALUES ('1','75','2017-05-15','kg');
-INSERT INTO weights (user_id, weight, date, locale) VALUES ('1','76','2017-05-16','kg');
-INSERT INTO weights (user_id, weight, date, locale) VALUES ('1','78','2017-05-17','kg');
-INSERT INTO weights (user_id, weight, date, locale) VALUES ('1','75','2017-05-18','kg');
-INSERT INTO weights (user_id, weight, date, locale) VALUES ('1','79','2017-05-19','kg');
-INSERT INTO weights (user_id, weight, date, locale) VALUES ('1','70','2017-05-20','kg');
-
-
-SELECT w.*, u.goal FROM weights w, tokens t, users u WHERE w.user_id = t.user_id and t.user_id = u.user_id and t.token_uuid="484c8010-3fd0-11e7-a734-7f319121c4c3" ORDER BY weight_id DESC limit 10

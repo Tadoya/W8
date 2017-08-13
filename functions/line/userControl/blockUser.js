@@ -5,6 +5,6 @@ module.exports = function(message){
                'SET activation = 0 ' +
                'WHERE user_key = "' + message.getUserId() +'"';
   goSql(sql, function(rows, fields){
-    console.log('unfollow', message.getUserId());
+    console.log('line_unfollow', message.getUserId());
   });
 };

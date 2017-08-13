@@ -6,6 +6,7 @@ module.exports = function (message, replyToken, lineBot){
               "VALUE ('"+message.getUserId()+"', 'LINE', '2') "+
               'ON DUPLICATE KEY UPDATE activation=1, state=2';
   goSql(sql, function(data, fields) {
-      lineBot.replyMessage(replyToken, setting.initWeightTypeButton());
+    console.log('line_follow', message.getUserId());
+    lineBot.replyMessage(replyToken, setting.initWeightTypeButton());
   });
 };
