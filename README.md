@@ -8,7 +8,7 @@
 * 몸무게 입력
 * 목표 설정
 * 체중 변화량 확인(차트, 테이블)
-* 몸무게 입력 푸시알람(LINE, FaceBook)
+* 몸무게 입력 푸시알람(LINE, Facebook)
 
 ## 기술스펙
 * Node.js(Express)
