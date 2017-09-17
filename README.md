@@ -1,5 +1,5 @@
 # W8(Weight)  
-### W8 is a simple weight management chatbot(Kakao talk, LINE, Facebook Messenger)
+### W8 is a simple weight management bot(Kakao talk, LINE, Facebook Messenger)
 
 ## 친구추가
 * [KakaoTalk](https://pf.kakao.com/_bknhxl)
