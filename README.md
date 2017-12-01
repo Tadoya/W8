@@ -1,7 +1,7 @@
 # W8(Weight)  
 ### W8 is a simple weight management bot(Kakao talk, LINE, Facebook Messenger)
 
-## 친구추가
+## 친구추가(서비스종료)
 * [KakaoTalk](https://pf.kakao.com/_bknhxl)
 * [LINE](https://line.me/R/ti/p/%40vbw9172l)
 * Facebook은 비공개 운영 중
